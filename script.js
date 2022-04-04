@@ -17,7 +17,7 @@ var hoursInDay = [
 ]
 
 $.each(hoursInDay, function(index, value){
-    $(".time-block").append("<tr class='row'><td class='hour'>"+value+"</td><td class='description'></td><td><button class='saveBtn'>save</button></td></tr>");
-});
+//     $(".time-block").append("<div class='row time-block'><div class='hour col-2'>"+value+"</div><div class='description col-9'></div><div><button class='saveBtn col-1'>save</button></div></div>");
+// });
 
-$(".description").append("<textarea placeholder='enter task'></textarea>");
+// $(".description").append("<textarea placeholder='enter task'></textarea>");
