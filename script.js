@@ -8,8 +8,6 @@ $("#currentDay").text(currentDay);
 var container = $(".container");
 var hours = ["9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm"];
 var dataHours = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
-var savedTask
-
 
 $.each(hours, function(index, hour){
     // console.log(hour);
@@ -36,16 +34,13 @@ $.each(hours, function(index, hour){
     var saveBtn = $("#btn"+time);
     saveBtn.on("click", function(){
         var userInput = $("#text"+time).val();
-        localStorage.setItem('task'+time, userInput);
+        var hourTask = 'task'+time;
+        localStorage.setItem( hourTask, userInput);
+        return userInput;
     });
+
+    var savedTask = localStorage.getItem('task'+time);
+    if (savedTask!==null) {
+        iD.text(savedTask);
+    };
 });
-
-// function saveTask(){
-//     saveBtn.on("click", function(){
-        
-//         localStorage.setItem('task'+time, iD.value);
-//     })
-// };
-// function getTask(){
-
-// };
