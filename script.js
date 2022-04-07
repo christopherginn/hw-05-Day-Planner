@@ -21,8 +21,9 @@ $.each(hours, function(index, hour){
 
     var time = dataHours[index];
     var iD = $("#text"+time);
-    console.log(time);
+    // console.log(time);
 
+    // Compare current time to plan and change class based on whether the current time is before, current, or later after the timeblock
     if (time == moment().hour()){
         iD.addClass("present");
     } else if (time > moment().hour()){
@@ -31,6 +32,7 @@ $.each(hours, function(index, hour){
         iD.addClass("past");
     };
 
+    // Save button functionality
     var saveBtn = $("#btn"+time);
     saveBtn.on("click", function(){
         var userInput = $("#text"+time).val();
@@ -39,6 +41,7 @@ $.each(hours, function(index, hour){
         return userInput;
     });
 
+    // Display saved text if any
     var savedTask = localStorage.getItem('task'+time);
     if (savedTask!==null) {
         iD.text(savedTask);
